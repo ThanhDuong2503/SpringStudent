@@ -1,7 +1,9 @@
 package de.neuefische.studentspring.controller;
 
 import de.neuefische.studentspring.model.Student;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 
@@ -30,7 +32,7 @@ public class StudentController {
             }
 
         }
-        return null;
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Student does not exist");
     }
 
     @PutMapping
