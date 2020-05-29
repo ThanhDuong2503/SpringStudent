@@ -16,6 +16,7 @@ public class StudentController {
 
     private final StudentService service;
 
+    // Injektion --> setzt Abhängigkeit zur Serviceklasse
     @Autowired
     public StudentController(StudentService service) {
         this.service = service;
